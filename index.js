@@ -42,16 +42,13 @@ function postnew() {
    
     $.ajax({
     	// run locally
-        //url : "http://localhost:7071/api/kurtmongowriter",
+        //url : "http://localhost:7071/api/marcusmongowriter",
         
-        
-        
-        // run on azure pre pubsub
-        //url : "https://kurtwritemongo.azurewebsites.net/api/kurtmongowriter",
+        // run on azure with  pubsub
+        url : "https://marcuswritemongo.azurewebsites.net/api/marcusmongowriter",
         
          // run on azure with  pubsub
-        
-        url : "https://kurtwritetopubsub.azurewebsites.net/api/kurtrestaurantwriter",
+        //url : "https://kurtwritetopubsub.azurewebsites.net/api/kurtrestaurantwriter",
 
         
         
