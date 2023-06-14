@@ -26,6 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
         postnew();  
     });
     
+    function StartWebListener()   
+    {
+        $.get("https://marcuslistenthenwrite.azurewebsites.net/", function(data, status){  });
+    }
+    
 });
 
 
@@ -42,13 +47,16 @@ function postnew() {
    
     $.ajax({
     	// run locally
-        //url : "http://localhost:7071/api/marcusmongowriter",
+        //url : "http://localhost:7071/api/marcuswritemongo",
+
+        // write to local copy of writeToPubSUb
+        //url : "http://localhost:7071/api/marcuswritetopubsub",
         
-        // run on azure with  pubsub
-        url : "https://marcuswritemongo.azurewebsites.net/api/marcusmongowriter",
+        // run on azure pre pubsub
+        //url : "https://kurtwritemongo.azurewebsites.net/api/kurtmongowriter",
         
-         // run on azure with  pubsub
-        //url : "https://kurtwritetopubsub.azurewebsites.net/api/kurtrestaurantwriter",
+        // run on azure with pubsub
+        url : "https://marcuswritetopubsub.azurewebsites.net/api/marcuswritetopubsub",
 
         
         
@@ -74,10 +82,10 @@ function createList(which, city) {
     }
 
     // run in cloud
-    $.get("https://kurtreadfrommongo.azurewebsites.net/api/readfrommongo/?name="+ param, function(data, status){
+    $.get("https://marcusmongoreader.azurewebsites.net/api/marcusmongowriter?name="+ param, function(data, status){
  
-     // run local
-      //$.get("http://localhost:7071/api/readfrommongo/?name=" + param, function(data, status){ 
+    // run local
+    //$.get("http://localhost:7071/api/marcusmongowriter?name=" + param, function(data, status){ 
 
     dataArray = JSON.parse(data);
     subsetArray = [];
