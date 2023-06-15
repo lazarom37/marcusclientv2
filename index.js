@@ -56,9 +56,7 @@ function postnew() {
         //url : "https://kurtwritemongo.azurewebsites.net/api/kurtmongowriter",
         
         // run on azure with pubsub
-        url : "https://marcuswritetopubsub.azurewebsites.net/api/marcuswritetopubsub",
-
-        
+        url : "https://marcuswritetopubsub.azurewebsites.net/api/marcuswritetopubsub",        
         
         type: "POST",
         data: JSON.stringify(newOne),
@@ -82,10 +80,7 @@ function createList(which, city) {
     }
 
     // run in cloud
-    $.get("https://marcuswritetopubsub.azurewebsites.net/api/marcuswritetopubsub"+ param, function(data, status){
-        //https://marcuswritetopubsub.azurewebsites.net/api/marcuswritetopubsub
-
-        //https://marcusmongoreader.azurewebsites.net/api/marcusmongowriter?name= <===OLD LINK, SAVING THIS FOR NOW
+    $.get("https://marcusmongoreader.azurewebsites.net/api/marcusmongowriter?name="+ param, function(data, status){
 
     // run local
     //$.get("http://localhost:7071/api/marcusmongowriter?name=" + param, function(data, status){ 
