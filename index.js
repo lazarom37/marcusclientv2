@@ -82,8 +82,11 @@ function createList(which, city) {
     }
 
     // run in cloud
-    $.get("https://marcusmongoreader.azurewebsites.net/api/marcusmongowriter?name="+ param, function(data, status){
- 
+    $.get("https://marcuswritetopubsub.azurewebsites.net/api/marcuswritetopubsub"+ param, function(data, status){
+        //https://marcuswritetopubsub.azurewebsites.net/api/marcuswritetopubsub
+
+        //https://marcusmongoreader.azurewebsites.net/api/marcusmongowriter?name= <===OLD LINK, SAVING THIS FOR NOW
+
     // run local
     //$.get("http://localhost:7071/api/marcusmongowriter?name=" + param, function(data, status){ 
 
